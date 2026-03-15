@@ -1,0 +1,294 @@
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.arc{padding:14px 0;font-family:var(--font-sans)}
+.conn{height:18px;display:flex;flex-direction:column;align-items:center;margin:0 auto}
+.conn-line{flex:1;width:1px;background:var(--color-border-secondary)}
+.conn-head{width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--color-border-secondary)}
+.phase{border-radius:12px;padding:10px 12px;margin-bottom:0}
+.phase-lbl{font-size:10px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;margin-bottom:9px}
+.lyr{display:flex;align-items:flex-start;gap:7px;margin-bottom:6px}
+.lyr:last-child{margin-bottom:0}
+.lyr-n{font-size:10px;width:17px;min-width:17px;text-align:right;padding-top:9px;color:var(--color-text-tertiary)}
+.lyr-box{flex:1;border-radius:8px;padding:8px 11px;border:0.5px solid;background:var(--color-background-primary)}
+.lyr-title{font-size:13px;font-weight:500}
+.lyr-desc{font-size:11px;margin-top:2px;color:var(--color-text-secondary)}
+.chips{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px}
+.chip{font-size:10px;padding:1px 7px;border-radius:8px;border:0.5px solid}
+.pipe{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px;align-items:center}
+.pstep{font-size:10px;padding:2px 7px;border-radius:4px;border:0.5px solid}
+.parr{font-size:9px;color:var(--color-text-tertiary)}
+.doms{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-top:8px}
+.dom{border-radius:6px;padding:7px 8px;cursor:pointer;border:0.5px solid;transition:opacity .15s;user-select:none}
+.dom:hover{opacity:.82}
+.dom-name{font-size:11px;font-weight:500}
+.dom-n{font-size:10px;margin-top:1px;opacity:.7}
+.dom-detail{font-size:10px;margin-top:6px;display:none;line-height:1.65}
+.dom.open .dom-detail{display:block}
+.mets{display:flex;gap:4px;flex-wrap:wrap;margin-top:6px}
+.met{font-size:10px;padding:2px 7px;border-radius:4px;border:0.5px solid}
+
+/* DATA — blue */
+.p-data{background:#e6f1fb}.p-data .phase-lbl{color:#185fa5}
+.p-data .lyr-box{border-color:#b5d4f4}.p-data .lyr-title{color:#185fa5}
+.p-data .chip{background:#e6f1fb;color:#185fa5;border-color:#85b7eb}
+/* PIPELINE — teal */
+.p-pipe{background:#e1f5ee}.p-pipe .phase-lbl{color:#0f6e56}
+.p-pipe .lyr-box{border-color:#9fe1cb}.p-pipe .lyr-title{color:#0f6e56}
+.p-pipe .pstep{background:#e1f5ee;color:#085041;border-color:#5dcaa5}
+.p-pipe .chip{background:#e1f5ee;color:#085041;border-color:#5dcaa5}
+/* MODEL — purple */
+.p-model{background:#eeedfe}.p-model .phase-lbl{color:#534ab7}
+.p-model .lyr-box{border-color:#afa9ec}.p-model .lyr-title{color:#534ab7}
+.p-model .chip{background:#eeedfe;color:#534ab7;border-color:#afa9ec}
+.p-model .met{background:#eeedfe;color:#534ab7;border-color:#afa9ec}
+/* Domain cards */
+.d-news{background:#faece7;border-color:#f0997b;color:#712b13}
+.d-hotel{background:#e6f1fb;border-color:#85b7eb;color:#0c447c}
+.d-ott{background:#eeedfe;border-color:#afa9ec;color:#3c3489}
+.d-fashion{background:#fbeaf0;border-color:#ed93b1;color:#72243e}
+.d-app{background:#e1f5ee;border-color:#5dcaa5;color:#085041}
+/* SERVE — coral */
+.p-serve{background:#faece7}.p-serve .phase-lbl{color:#993c1d}
+.p-serve .lyr-box{border-color:#f0997b}.p-serve .lyr-title{color:#993c1d}
+.p-serve .chip{background:#faece7;color:#993c1d;border-color:#f0997b}
+
+@media(prefers-color-scheme:dark){
+  .p-data{background:#042c53}.p-data .phase-lbl{color:#85b7eb}
+  .p-data .lyr-box{border-color:#185fa5}.p-data .lyr-title{color:#85b7eb}
+  .p-data .chip{background:#042c53;color:#b5d4f4;border-color:#185fa5}
+  .p-pipe{background:#04342c}.p-pipe .phase-lbl{color:#5dcaa5}
+  .p-pipe .lyr-box{border-color:#1d9e75}.p-pipe .lyr-title{color:#5dcaa5}
+  .p-pipe .pstep{background:#04342c;color:#9fe1cb;border-color:#1d9e75}
+  .p-pipe .chip{background:#04342c;color:#9fe1cb;border-color:#1d9e75}
+  .p-model{background:#26215c}.p-model .phase-lbl{color:#afa9ec}
+  .p-model .lyr-box{border-color:#534ab7}.p-model .lyr-title{color:#afa9ec}
+  .p-model .chip{background:#26215c;color:#cecbf6;border-color:#534ab7}
+  .p-model .met{background:#26215c;color:#cecbf6;border-color:#534ab7}
+  .d-news{background:#4a1b0c;border-color:#993c1d;color:#f5c4b3}
+  .d-hotel{background:#042c53;border-color:#185fa5;color:#b5d4f4}
+  .d-ott{background:#26215c;border-color:#534ab7;color:#cecbf6}
+  .d-fashion{background:#4b1528;border-color:#993556;color:#f4c0d1}
+  .d-app{background:#04342c;border-color:#0f6e56;color:#9fe1cb}
+  .p-serve{background:#4a1b0c}.p-serve .phase-lbl{color:#f0997b}
+  .p-serve .lyr-box{border-color:#993c1d}.p-serve .lyr-title{color:#f0997b}
+  .p-serve .chip{background:#4a1b0c;color:#f5c4b3;border-color:#993c1d}
+}
+</style>
+
+<div class="arc">
+
+<div class="phase p-data">
+  <div class="phase-lbl">Phase 1 · Data</div>
+  <div class="lyr">
+    <div class="lyr-n">1</div>
+    <div class="lyr-box">
+      <div class="lyr-title">Data layer</div>
+      <div class="lyr-desc">Raw inputs → processed CSVs with standard schema</div>
+      <div class="chips">
+        <span class="chip">fashion_reviews.csv — review_id, source, item_name, review_text, rating, review_time</span>
+        <span class="chip">app_reviews_dataset.csv — + app_name, thumbs_up_count, app_version, developer_reply</span>
+        <span class="chip">hotel_reviews.csv — + city, country</span>
+        <span class="chip">news_dataset.csv — id, source, title, text, subject, date, label</span>
+        <span class="chip">ott_content_dataset.csv — content_id, title, content_type, genre, platform, cast…</span>
+      </div>
+    </div>
+  </div>
+  <div class="lyr">
+    <div class="lyr-n">2</div>
+    <div class="lyr-box">
+      <div class="lyr-title">Data processing layer</div>
+      <div class="lyr-desc">Domain-specific pipelines → clean datasets, unified schema</div>
+      <div class="chips">
+        <span class="chip">fashion_data_pipeline.py</span>
+        <span class="chip">hotel_data_pipeline.py</span>
+        <span class="chip">news_data_pipeline.py</span>
+        <span class="chip">ott_data_pipeline.py</span>
+        <span class="chip">app_review_pipeline.py</span>
+      </div>
+    </div>
+  </div>
+  <div class="lyr">
+    <div class="lyr-n">3</div>
+    <div class="lyr-box">
+      <div class="lyr-title">EDA layer</div>
+      <div class="lyr-desc">Class distribution · keyword discovery · dataset bias · text length analysis</div>
+      <div class="chips">
+        <span class="chip">eda_news.ipynb</span>
+        <span class="chip">eda_hotel.ipynb</span>
+        <span class="chip">eda_ott.ipynb</span>
+        <span class="chip">eda_fashion.ipynb</span>
+        <span class="chip">eda_apps.ipynb</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conn"><div class="conn-line"></div><div class="conn-head"></div></div>
+
+<div class="phase p-pipe">
+  <div class="phase-lbl">Phase 2 · NLP Pipeline</div>
+  <div class="lyr">
+    <div class="lyr-n">4</div>
+    <div class="lyr-box">
+      <div class="lyr-title">NLP preprocessing pipeline</div>
+      <div class="lyr-desc">Shared across all domains — outputs clean tokens</div>
+      <div class="pipe">
+        <span class="pstep">Raw text</span><span class="parr">›</span>
+        <span class="pstep">Lowercase</span><span class="parr">›</span>
+        <span class="pstep">Remove URLs</span><span class="parr">›</span>
+        <span class="pstep">Strip HTML</span><span class="parr">›</span>
+        <span class="pstep">Remove punctuation &amp; numbers</span><span class="parr">›</span>
+        <span class="pstep">Tokenize</span><span class="parr">›</span>
+        <span class="pstep">Stopword removal</span><span class="parr">›</span>
+        <span class="pstep">Lemmatize</span>
+      </div>
+    </div>
+  </div>
+  <div class="lyr">
+    <div class="lyr-n">5</div>
+    <div class="lyr-box">
+      <div class="lyr-title">Feature engineering</div>
+      <div class="lyr-desc">Text → vectors. Categoricals → encoders. Mixed → ColumnTransformer. Full Pipeline saved as .pkl</div>
+      <div class="chips">
+        <span class="chip">TF-IDF (max_features=20k, ngram 1–2)</span>
+        <span class="chip">Bag of Words</span>
+        <span class="chip">BERT tokenizer</span>
+        <span class="chip">Word2Vec / GloVe / FastText</span>
+        <span class="chip">Sentence embeddings</span>
+        <span class="chip">OneHotEncoder (app_name, source…)</span>
+        <span class="chip">Numeric (rating, review_length, thumbs_up)</span>
+        <span class="chip">ColumnTransformer (text + tabular)</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conn"><div class="conn-line"></div><div class="conn-head"></div></div>
+
+<div class="phase p-model">
+  <div class="phase-lbl">Phase 3 · Modeling</div>
+  <div class="lyr">
+    <div class="lyr-n">6</div>
+    <div class="lyr-box">
+      <div class="lyr-title">Model training layer — 13 models across 5 domains</div>
+      <div class="lyr-desc">Click a domain card to expand its models</div>
+      <div class="doms">
+        <div class="dom d-news" onclick="toggle(this)">
+          <div class="dom-name">News</div>
+          <div class="dom-n">3 models</div>
+          <div class="dom-detail">Logistic Regression<br>SVM<br>BERT (fake news)</div>
+        </div>
+        <div class="dom d-hotel" onclick="toggle(this)">
+          <div class="dom-name">Hotel</div>
+          <div class="dom-n">3 models</div>
+          <div class="dom-detail">Aspect-based sentiment<br>Churn risk predictor<br>Rating predictor</div>
+        </div>
+        <div class="dom d-ott" onclick="toggle(this)">
+          <div class="dom-name">OTT</div>
+          <div class="dom-n">3 models</div>
+          <div class="dom-detail">Content sentiment<br>Content recommender<br>Viral probability</div>
+        </div>
+        <div class="dom d-fashion" onclick="toggle(this)">
+          <div class="dom-name">Fashion</div>
+          <div class="dom-n">2 models</div>
+          <div class="dom-detail">Aspect sentiment<br>(size, quality, comfort)<br>Rating predictor</div>
+        </div>
+        <div class="dom d-app" onclick="toggle(this)">
+          <div class="dom-name">App reviews</div>
+          <div class="dom-n">2 models</div>
+          <div class="dom-detail">Feedback classifier<br>(bug / feature / other)<br>App recommender</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="lyr">
+    <div class="lyr-n">7</div>
+    <div class="lyr-box">
+      <div class="lyr-title">Model evaluation</div>
+      <div class="lyr-desc">Classification and regression metrics, model comparison, MLflow experiment tracking</div>
+      <div class="mets">
+        <span class="met">Accuracy</span>
+        <span class="met">Precision</span>
+        <span class="met">Recall</span>
+        <span class="met">F1 score</span>
+        <span class="met">Confusion matrix</span>
+        <span class="met">RMSE</span>
+        <span class="met">MAE</span>
+        <span class="met">Classification report</span>
+      </div>
+    </div>
+  </div>
+  <div class="lyr">
+    <div class="lyr-n">8</div>
+    <div class="lyr-box">
+      <div class="lyr-title">Model registry</div>
+      <div class="lyr-desc">Best model per task persisted as artifacts — full pipeline saved, not just the model weights</div>
+      <div class="chips">
+        <span class="chip">bert_fake_news.pt</span>
+        <span class="chip">hotel_absa_model.pt</span>
+        <span class="chip">ott_recommender.pkl</span>
+        <span class="chip">app_feedback_classifier.pkl</span>
+        <span class="chip">fashion_sentiment_pipeline.pkl</span>
+        <span class="chip">mlflow_runs/ + training_logs/</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="conn"><div class="conn-line"></div><div class="conn-head"></div></div>
+
+<div class="phase p-serve">
+  <div class="phase-lbl">Phase 4 · Serving</div>
+  <div class="lyr">
+    <div class="lyr-n">9</div>
+    <div class="lyr-box">
+      <div class="lyr-title">Domain router</div>
+      <div class="lyr-desc">Detects domain from input text → routes to the correct model module</div>
+      <div class="chips">
+        <span class="chip">domain_detector.py</span>
+        <span class="chip">prediction_router.py</span>
+        <span class="chip">if news → fake_news_model</span>
+        <span class="chip">if hotel → ABSA + churn + rating</span>
+        <span class="chip">if fashion → aspect sentiment + rating</span>
+      </div>
+    </div>
+  </div>
+  <div class="lyr">
+    <div class="lyr-n">10</div>
+    <div class="lyr-box">
+      <div class="lyr-title">Inference API (FastAPI)</div>
+      <div class="lyr-desc">POST /analyze → structured JSON predictions per domain. Dockerized for AWS / GCP / Render / Railway</div>
+      <div class="chips">
+        <span class="chip">main.py</span>
+        <span class="chip">routes.py</span>
+        <span class="chip">prediction_service.py</span>
+        <span class="chip">schemas.py</span>
+        <span class="chip">Dockerfile + docker-compose.yml</span>
+      </div>
+    </div>
+  </div>
+  <div class="lyr">
+    <div class="lyr-n">11</div>
+    <div class="lyr-box">
+      <div class="lyr-title">Dashboard (Streamlit)</div>
+      <div class="lyr-desc">Interactive interface consuming the API — one view per domain</div>
+      <div class="chips">
+        <span class="chip">Fake news checker</span>
+        <span class="chip">Review sentiment analyzer</span>
+        <span class="chip">App feedback explorer</span>
+        <span class="chip">Content recommendation viewer</span>
+        <span class="chip">Trend dashboard</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+function toggle(el){
+  const was=el.classList.contains('open');
+  document.querySelectorAll('.dom.open').forEach(d=>d.classList.remove('open'));
+  if(!was)el.classList.add('open');
+}
+</script>

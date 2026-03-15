@@ -1,0 +1,10 @@
+domain,task,model,accuracy,f1,precision,recall
+App Reviews,Feedback Classifier,lightgbm,0.998,0.998,0.998,0.998
+App Reviews,Recommender,svc,0.8763,0.8738,0.8757,0.8763
+Fashion,Sentiment,logistic,0.8905,0.8893,0.8891,0.8905
+Hotel,Churn Risk,svc,0.9818,0.9799,0.9795,0.9818
+Hotel,Sentiment,logistic,0.9741,0.9695,0.9702,0.9741
+News,Fake Detection,xgboost,0.8443,0.8442,0.8466,0.8443
+OTT,Content Sentiment,lightgbm,0.997,0.9969,0.9969,0.997
+OTT,Genre Recommender,logistic,0.7971,0.7984,0.8501,0.7971
+OTT,Viral Probability,svc,0.9891,0.9891,0.9891,0.9891

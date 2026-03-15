@@ -1,0 +1,16 @@
+cd C:\Users\arnav\Downloads\Sentiment-Intelligence-Engine
+```
+
+Create a `.gitignore` file with this content:
+```
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# node
+node_modules/
+dist/
+
+# env
+.env
