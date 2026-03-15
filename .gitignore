@@ -3,6 +3,9 @@ cd C:\Users\arnav\Downloads\Sentiment-Intelligence-Engine
 
 Create a `.gitignore` file with this content:
 ```
+# datasets
+data/
+
 # python
 .venv/
 __pycache__/
