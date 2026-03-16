@@ -25,7 +25,7 @@ const NAV = [
     section: 'Recommenders',
     items: [
       { to: '/app-recommender', label: 'App Recommender', icon: Bot      },
-      { to: '/ott-recommender', label: 'OTT Recommender', icon: BookOpen },
+      // { to: '/ott-recommender', label: 'OTT Recommender', icon: BookOpen },
     ],
   },
   {
