@@ -54,9 +54,16 @@ export default function ModelComparison() {
         </div>
 
         {/* Report images from static */}
+        {/* Report images from backend static */}
         <div className="comparison-grid fade-up fade-up-1">
-          <StatImg src="/api/v1/static/reports/best_models_heatmap.png"    caption="Best F1 Score per Domain × Task" />
-          <StatImg src="/api/v1/static/reports/model_comparison_chart.png" caption="Model Comparison — All Domains" />
+          <StatImg
+            src="https://sentiment-intelligence-engine.onrender.com/api/v1/static/reports/best_models_heatmap.png"
+            caption="Best F1 Score per Domain × Task"
+          />
+          <StatImg
+            src="https://sentiment-intelligence-engine.onrender.com/api/v1/static/reports/model_comparison_chart.png"
+            caption="Model Comparison — All Domains"
+          />
         </div>
 
         {/* Best models chart */}
