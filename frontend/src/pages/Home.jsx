@@ -87,7 +87,7 @@ const PILLS = [
 export default function Home() {
   return (
     <>
-      <Topbar title="Sentiment Intelligence Engine" subtitle="" />
+      <Topbar title="SIE" subtitle="Sentiment Intelligence Engine" />
 
       <div className="page-body" style={{ maxWidth: 1200, margin: '0 auto' }}>
 
