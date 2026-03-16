@@ -6,7 +6,7 @@ import { ImageOff } from 'lucide-react'
 
 function EDAImage({ path, caption }) {
   const [err, setErr] = useState(false)
-  const src = `/api/v1/static/eda/${path}`
+  const src = `/eda/${path}`
 
   if (err) {
     return (
@@ -63,7 +63,7 @@ export default function EDAGallery({ images }) {
       }}>
         ℹ Images served from FastAPI static mount at{' '}
         <span style={{ color: 'var(--cyan-dim)' }}>/static/eda/</span>.
-        Mount <span style={{ color: 'var(--cyan-dim)' }}>notebooks/eda</span> as a StaticFiles directory in your FastAPI app.
+        Mount <span style={{ color: 'var(--cyan-dim)' }}>public/eda</span> as a StaticFiles directory in your FastAPI app.
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
         {images.map(({ path, caption }) => (

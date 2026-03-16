@@ -3,14 +3,14 @@ import Topbar from '../components/layout/Topbar'
 import EDAGallery from '../components/common/EDAGallery'
 
 const DOMAINS = [
-{ key: 'hotel', label: '🏨 Hotel', images: [
-  { path: '/eda/hotel/rating_distribution.png', caption: 'Rating Distribution' },
-  { path: '/eda/hotel/sentiment_split.png', caption: 'Sentiment Split' },
-  { path: '/eda/hotel/review_length.png', caption: 'Review Length Distribution' },
-  { path: '/eda/hotel/top_keywords.png', caption: 'Top Keywords' },
-  { path: '/eda/hotel/length_by_rating.png', caption: 'Review Length by Rating' },
-  { path: '/eda/hotel/wordcloud.png', caption: 'Word Cloud' },
-]},
+  { key: 'hotel',   label: '🏨 Hotel',        images: [
+    { path: 'hotel/rating_distribution.png', caption: 'Rating Distribution' },
+    { path: 'hotel/sentiment_split.png',     caption: 'Sentiment Split' },
+    { path: 'hotel/review_length.png',       caption: 'Review Length Distribution' },
+    { path: 'hotel/top_keywords.png',        caption: 'Top Keywords' },
+    { path: 'hotel/length_by_rating.png',    caption: 'Review Length by Rating' },
+    { path: 'hotel/wordcloud.png',           caption: 'Word Cloud' },
+  ]},
   { key: 'news',    label: '📰 News',          images: [
     { path: 'news/label_distribution.png',   caption: 'Fake vs Real Distribution' },
     { path: 'news/subject_distribution.png', caption: 'Subject Distribution' },
