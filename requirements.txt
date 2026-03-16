@@ -1,21 +1,52 @@
+# ── Core ML ───────────────────────────────────────────────────
 numpy
 pandas
 scikit-learn
-matplotlib
-seaborn
-jupyter
-notebook
 scipy
+xgboost
+lightgbm
+optuna
+joblib
+tqdm
+
+# ── Deep Learning ─────────────────────────────────────────────
 torch
 torchtext
 transformers
 datasets
+accelerate
+tokenizers
+sentencepiece
+safetensors
+evaluate
+onnxruntime
+
+# ── NLP ───────────────────────────────────────────────────────
+nltk
 spacy
 wordcloud
 emoji
-onnxruntime
-tensorflow
-keras
+contractions
+
+# ── API Backend ───────────────────────────────────────────────
 fastapi
 uvicorn
+python-multipart
+pydantic
 python-dotenv
+
+# ── Frontend / Dashboard ──────────────────────────────────────
+streamlit
+plotly
+requests
+httpx
+
+# ── Visualization / Notebooks ─────────────────────────────────
+matplotlib
+seaborn
+pillow
+jupyter
+notebook
+
+# ── Utilities ─────────────────────────────────────────────────
+protobuf
