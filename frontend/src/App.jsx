@@ -48,7 +48,7 @@ export default function App() {
           <Route path="/app-reviews"      element={<AppReviews      {...topbarProps} />} />
           <Route path="/app-recommender"  element={<AppRecommender  {...topbarProps} />} />
           <Route path="/ott"              element={<OTT             {...topbarProps} />} />
-          <Route path="/ott-recommender"  element={<OTTRecommender  {...topbarProps} />} />
+          {/* <Route path="/ott-recommender"  element={<OTTRecommender  {...topbarProps} />} /> */}
           <Route path="/eda-explorer"     element={<EDAExplorer     {...topbarProps} />} />
           <Route path="/model-comparison" element={<ModelComparison {...topbarProps} />} />
           <Route path="/batch-analyzer"   element={<BatchAnalyzer   {...topbarProps} />} />
