@@ -1,14 +1,35 @@
-fastapi
-uvicorn
-
+# ── Core ML ─────────────────────────
 numpy
 pandas
 scikit-learn
 scipy
-
 xgboost
 lightgbm
-
 joblib
+tqdm
+
+# ── NLP Processing ──────────────────
 nltk
+emoji
+contractions
+wordcloud
+
+# ── API Backend ─────────────────────
+fastapi
+uvicorn
+pydantic
 python-multipart
+python-dotenv
+
+# ── Utilities / HTTP ────────────────
+requests
+httpx
+
+# ── Visualization (for reports) ─────
+matplotlib
+seaborn
+pillow
+tokenizers
+spacy
+jupyter
+optuna
