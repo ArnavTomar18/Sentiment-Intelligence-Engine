@@ -1,6 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { Sun, Moon, Menu, ExternalLink } from 'lucide-react'
 import { checkHealth } from '../../api/client'
+const [status, setStatus] = useState("checking")
+
+async function checkHealthWithRetry(retries = 3) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const res = await checkHealth()
+      return res
+    } catch (e) {
+      await new Promise(r => setTimeout(r, 2000))
+    }
+  }
+  throw new Error("API unavailable")
+}
 
 // ── Theme helpers ─────────────────────────────────────────────────────────────
 function getInitialTheme() {
@@ -28,11 +41,13 @@ export default function Topbar({ title, subtitle, mobileOpen, setMobileOpen }) {
   useEffect(() => { applyTheme(dark) }, [dark])
 
   // Real health-check using your existing client
-  useEffect(() => {
-    checkHealth()
-      .then(() => setApiStatus('online'))
-      .catch(() => setApiStatus('offline'))
-  }, [])
+useEffect(() => {
+  setApiStatus('checking')
+
+  checkHealthWithRetry()
+    .then(() => setApiStatus('online'))
+    .catch(() => setApiStatus('offline'))
+}, [])
 
   const toggleTheme = () => setDark((d) => !d)
 
