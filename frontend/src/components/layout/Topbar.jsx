@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Sun, Moon, Menu, ExternalLink } from 'lucide-react'
 import { checkHealth } from '../../api/client'
-const [status, setStatus] = useState("checking")
 
 async function checkHealthWithRetry(retries = 3) {
   for (let i = 0; i < retries; i++) {
