@@ -435,9 +435,9 @@ npm run build
 
 <div align="center">
 
-**Arnav**
+**Arnav Tomar**
 
-[![GitHub](https://img.shields.io/badge/Arnavtomar18?style=for-the-badge&logo=github)](https://github.com/arnavtomar18)
+[![GitHub](https://img.shields.io/badge/Github-arnavtomar18?style=for-the-badge&logo=github)](https://github.com/arnavtomar18)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/arnavtomar18)
 
 *Built with curiosity, coffee, and way too many model training runs.*
