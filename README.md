@@ -22,7 +22,7 @@
 
 <br/>
 
-[🚀 Live Demo](#-deployment) · [📖 API Docs](#-api-reference) · [🧠 Models](#-ml-models--architecture) · [⚙️ Setup](#-getting-started) · [🗺️ Roadmap](#-roadmap)
+[🚀 Live Demo](https://sentiment-intelligence-engine.vercel.app) · [📖 API Docs](#-api-reference) · [🧠 Models](#-ml-models--architecture) · [⚙️ Setup](#-getting-started) · [🗺️ Roadmap](#-roadmap)
 
 </div>
 
@@ -37,7 +37,6 @@
 - [⚙️ Getting Started](#-getting-started)
 - [🔌 API Reference](#-api-reference)
 - [💻 Frontend](#-frontend)
-- [🚀 Deployment](#-deployment)
 - [📊 Performance](#-performance)
 - [🗺️ Roadmap](#-roadmap)
 - [👤 Author](#-author)
@@ -369,20 +368,6 @@ SIE ships with **two frontend implementations** for different use cases:
 
 ---
 
-## 🚀 Deployment
-
-### Backend → Render
-
-1. Push your repo to GitHub
-2. Create a new **Web Service** on [Render](https://render.com)
-3. Set build command: `pip install -r requirements.txt`
-4. Set start command: `uvicorn backend.main:app --host 0.0.0.0 --port $PORT`
-5. Add environment variables in the Render dashboard
-
-> ⚠️ **Note:** Render's free tier sleeps after ~15 minutes of inactivity. Use a keep-alive ping service or upgrade to a paid tier for production use.
-
----
-
 ### Frontend → Netlify
 
 ```bash
@@ -452,7 +437,7 @@ npm run build
 
 **Arnav**
 
-[![GitHub](https://img.shields.io/badge/GitHub-your--username-18171?style=for-the-badge&logo=github)](https://github.com/arnavtomar18)
+[![GitHub](https://img.shields.io/badge/Arnavtomar18?style=for-the-badge&logo=github)](https://github.com/arnavtomar18)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/arnavtomar18)
 
 *Built with curiosity, coffee, and way too many model training runs.*
