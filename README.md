@@ -482,7 +482,7 @@ Model evaluation reports are saved in `/reports/`:
 
 **Arnav Tomar**
 
-[![GitHub](https://img.shields.io/badge/GitHub-your--username-181717?style=for-the-badge&logo=github)](https://github.com/Arnavtomar18)
+[![GitHub](https://img.shields.io/badge/GitHub-arnavtomar18-000?style=for-the-badge&logo=github)](https://github.com/Arnavtomar18)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/arnavtomar1)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-000000?style=for-the-badge&logo=vercel)](https://sentiment-intelligence-engine.vercel.app/)
 
