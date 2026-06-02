@@ -120,7 +120,7 @@ useEffect(() => {
 
         {/* Portfolio link */}
         <a
-          href="arnavtomar.site"
+          href="https://arnavtomar.site/"
           target="_blank"
           rel="noopener noreferrer"
           className="topbar-btn portfolio"
