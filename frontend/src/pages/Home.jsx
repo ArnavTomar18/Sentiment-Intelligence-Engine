@@ -215,7 +215,7 @@ export default function Home() {
 
             <div className="developer-links">
               <a
-                href="arnavtomar.site"
+                href="https://arnavtomar.site/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dev-link portfolio"
