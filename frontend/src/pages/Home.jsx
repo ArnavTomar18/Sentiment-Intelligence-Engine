@@ -215,7 +215,7 @@ export default function Home() {
 
             <div className="developer-links">
               <a
-                href="https://portfolio-steel-one-88.vercel.app"
+                href="arnavtomar.site"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="dev-link portfolio"
