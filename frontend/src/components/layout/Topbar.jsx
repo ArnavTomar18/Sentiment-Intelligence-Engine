@@ -120,7 +120,7 @@ useEffect(() => {
 
         {/* Portfolio link */}
         <a
-          href="https://portfolio-steel-one-88.vercel.app"
+          href="arnavtomar.site"
           target="_blank"
           rel="noopener noreferrer"
           className="topbar-btn portfolio"
