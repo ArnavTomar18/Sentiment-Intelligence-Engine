@@ -99,8 +99,9 @@ export default function Home() {
           </h1>
 
           <p className="hero-sub">
-            AI-powered sentiment analysis across news, hotels, fashion, OTT content,
-            and app reviews — 18 trained models, 12 tasks, one unified platform.
+            AI-powered sentiment analysis across news, hotels, fashion, OTT content, and app reviews — featuring 18 trained models, 12 tasks, all in one unified platform.
+            <br /><br />
+            <b>⚠️ For the best experience, please open this website in desktop mode.</b>
           </p>
 
           <div className="hero-actions">
